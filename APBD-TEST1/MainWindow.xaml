@@ -34,14 +34,14 @@
 
         <Label Content="Szukaj" Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Right" Margin="3"/>
         <TextBox Name="SearchTxtBox" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"  Margin="3" />
-        <Button Name="SearchBtn" Content="Szukaj" Grid.Column="3" Grid.Row="0" Margin="3" />
-        <Button Name="ShowAllBtn" Content="Pokaż wszystkich" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="0" Margin="3"/>
+        <Button Name="SearchBtn" Content="Szukaj" Grid.Column="3" Grid.Row="0" Margin="3" Click="SearchBtn_Click" />
+        <Button Name="ShowAllBtn" Content="Pokaż wszystkich" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="0" Margin="3" Click="ShowAllBtn_Click"/>
 
         <DataGrid Name="EMPGrid" Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="1" Margin="15" IsReadOnly="True"
                   AutoGenerateColumns="False" SelectionMode="Extended">
             <DataGrid.Columns>
-                <DataGridTextColumn Header="Employee" Binding="{Binding  Ename}" Width="2*"  HeaderStyle="{StaticResource CenterGridHeaderStyle}"  />
-                <DataGridTextColumn Header="Job" Binding="{Binding  Job}" Width="3*"  HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
+                <DataGridTextColumn Header="Employee" Binding="{Binding  ENAME}" Width="2*"  HeaderStyle="{StaticResource CenterGridHeaderStyle}"  />
+                <DataGridTextColumn Header="Job" Binding="{Binding  JOB}" Width="3*"  HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
                 <DataGridTextColumn Header="Dname" Binding="{Binding  Dname}" Width="2*"  HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
                 
             </DataGrid.Columns>
@@ -59,6 +59,7 @@
         <TextBox Name="JobTxtBox" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Margin="5" />
         <TextBox Name="DnameTxtBox" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" />
 
-        <Button Name="AddBtn" Content="Dodaj" Grid.Column="2" Grid.Row="7" Margin="5" Width="60" HorizontalAlignment="Right" />
+        <Button Name="AddBtn" Content="Dodaj" Grid.Column="2" Grid.Row="7" Margin="5" Width="60"
+                HorizontalAlignment="Right" Click="AddBtn_Click" />
     </Grid>
 </Window>
