@@ -6,7 +6,59 @@
         xmlns:local="clr-namespace:APBD_TEST1"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+
+    <Window.Resources>
+        <Style x:Key="CenterGridHeaderStyle" TargetType="DataGridColumnHeader">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+    <Grid Margin="3">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="7*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Label Content="Szukaj" Grid.Column="0" Grid.Row="0" HorizontalContentAlignment="Right" Margin="3"/>
+        <TextBox Name="SearchTxtBox" Grid.Column="1" Grid.Row="0" Grid.ColumnSpan="2"  Margin="3" />
+        <Button Name="SearchBtn" Content="Szukaj" Grid.Column="3" Grid.Row="0" Margin="3" />
+        <Button Name="ShowAllBtn" Content="Pokaż wszystkich" Grid.Column="4" Grid.ColumnSpan="2" Grid.Row="0" Margin="3"/>
+
+        <DataGrid Name="EMPGrid" Grid.Column="0" Grid.ColumnSpan="7" Grid.Row="1" Margin="15" IsReadOnly="True"
+                  AutoGenerateColumns="False" SelectionMode="Extended">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Employee" Binding="{Binding  Ename}" Width="2*"  HeaderStyle="{StaticResource CenterGridHeaderStyle}"  />
+                <DataGridTextColumn Header="Job" Binding="{Binding  Job}" Width="3*"  HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
+                <DataGridTextColumn Header="Dname" Binding="{Binding  Dname}" Width="2*"  HeaderStyle="{StaticResource CenterGridHeaderStyle}"/>
+                
+            </DataGrid.Columns>
+           
+            
+        </DataGrid>
+
+        <Label Content="Dodaj pracownika" Grid.Column="0" Grid.ColumnSpan="2" Grid.Row="2" 
+               HorizontalContentAlignment="Left" Margin="30 3 3 3" />
+        <Label Content="Ename" Grid.Column="0" Grid.Row="3" HorizontalContentAlignment="Center" Margin="3"/>
+        <Label Content="Job" Grid.Column="0" Grid.Row="4" HorizontalContentAlignment="Center"  Margin="3"/>
+        <Label Content="Dname" Grid.Column="0" Grid.Row="5" HorizontalContentAlignment="Center"   Margin="3"/>
+
+        <TextBox Name="EnameTxtBox" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="3"   Margin="5"/>
+        <TextBox Name="JobTxtBox" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="4" Margin="5" />
+        <TextBox Name="DnameTxtBox" Grid.Column="1" Grid.ColumnSpan="2" Grid.Row="5" Margin="5" />
+
+        <Button Name="AddBtn" Content="Dodaj" Grid.Column="2" Grid.Row="7" Margin="5" Width="60" HorizontalAlignment="Right" />
     </Grid>
 </Window>
